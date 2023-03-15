@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './core/login/login.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
+// import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { CreatePostComponent } from './posts/create-post/create-post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    // MatSlideToggleModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
