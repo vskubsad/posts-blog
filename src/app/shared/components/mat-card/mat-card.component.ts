@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mat-card',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./mat-card.component.scss']
 })
 export class MatCardComponent {
-
+@Input() post:any = {}
 }

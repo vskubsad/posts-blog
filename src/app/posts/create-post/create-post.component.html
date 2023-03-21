@@ -1,4 +1,37 @@
-<p>create-post works!</p>
+<h1>Create New Post</h1>
+<form [formGroup]="createPostForm" (ngSubmit)="createPost()">
+  <div class="element-width">
+    <app-mat-input
+      label="Title"
+      placeholder="Please enter the post title"
+      [fieldCtrl]="createPostForm.controls.title"
+    >
+    </app-mat-input>
+  </div>
+  <div class="element-width">
+    <app-mat-input
+      label="Sub Title"
+      placeholder="Please enter the post sub-title"
+      [fieldCtrl]="createPostForm.controls.subTitle"
+    >
+    </app-mat-input>
+  </div>
 
-<app-mat-input></app-mat-input>
-<!-- <app-mat-card></app-mat-card> -->
+  <div class="element-width">
+    <app-mat-textarea
+      label="Description"
+      placeholder="Please enter the post description"
+      [fieldCtrl]="createPostForm.controls.description"
+    ></app-mat-textarea>
+  </div>
+  <div>
+    <button
+      type="submit"
+      mat-button
+      color="primary"
+      [disabled]="!createPostForm.valid"
+    >
+      Create
+    </button>
+  </div>
+</form>

@@ -1,32 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatInputComponent } from './components/mat-input/mat-input.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { MatCardComponent } from './components/mat-card/mat-card.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatChipsModule} from '@angular/material/chips';
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTextareaComponent } from './components/mat-textarea/mat-textarea.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
-  declarations: [
-    MatInputComponent,
-    MatCardComponent
-  ],
+  declarations: [MatInputComponent, MatCardComponent, MatTextareaComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    MatGridListModule
   ],
-  exports:  [
-    MatInputComponent,
-    MatCardComponent,
-]
+  exports: [MatInputComponent, MatCardComponent, MatTextareaComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

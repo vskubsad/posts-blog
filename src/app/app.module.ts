@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 // import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
@@ -21,7 +22,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // MatSlideToggleModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers: [],

@@ -14,12 +14,14 @@ export class PostsComponent {
   posts: any = [
     {
       id: '1',
-      name: 'test-1',
+      title: 'test-1',
+      subTitle: 'test sub title',
       description: ' post-1 description sample',
     },
     {
       id: '2',
-      name: 'test-2',
+      title: 'test-2',
+      subTitle: 'test sub title',
       description: ' post-2 description sample',
     },
   ];

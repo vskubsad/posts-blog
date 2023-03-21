@@ -1,4 +1,5 @@
-<div *ngFor="let post of posts" (click)="showPostDetails(post)">
-  <h3>{{ post.name }}</h3>
-  <p>{{ post.description }}</p>
-</div>
+<!-- <mat-grid-list cols="2" rowHeight="2:1"> -->
+  <div *ngFor="let post of posts" (click)="showPostDetails(post)">
+    <app-mat-card [post]="post"></app-mat-card>
+  </div>
+<!-- </mat-grid-list> -->
