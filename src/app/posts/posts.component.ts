@@ -1,6 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { ApiService } from '../shared/services/api.service';
+import { Subscription } from 'rxjs';
+import { Post, Posts } from '../shared/interfaces/post';
 
 @Component({
   selector: 'app-posts',
@@ -8,26 +11,23 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  posts: any;
+  postsSubscription: Subscription;
+  posts: Post[];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private http: HttpClient
+    private apiService: ApiService
   ) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:4000/api/posts').subscribe(
-      (data: any) => {
-        console.log(data);
-        this.posts = data?.posts;
-      },
-      (error) => console.log('Error: ', error)
-    );
+    this.postsSubscription = this.apiService.getPosts().subscribe({
+      next: (response: Posts) => (this.posts = response.posts),
+      error: (error) => console.log(error),
+    });
   }
 
-  showPostDetails(post: any) {
-    console.log('post: ', post);
+  showPostDetails(post: Post) {
     this.router.navigate(['post-details'], {
       relativeTo: this.route,
       state: { post },

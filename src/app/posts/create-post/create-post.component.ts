@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { LoremIpsum } from 'lorem-ipsum';
+import { Subscription } from 'rxjs';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-create-post',
@@ -11,6 +13,7 @@ import { LoremIpsum } from 'lorem-ipsum';
 })
 export class CreatePostComponent {
   createPostForm: FormGroup;
+  createPostSubscription: Subscription;
 
   lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -23,7 +26,7 @@ export class CreatePostComponent {
     },
   });
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private router: Router, private apiService: ApiService) {
     this.createPostFormGroup();
   }
 
@@ -42,16 +45,12 @@ export class CreatePostComponent {
   }
 
   createPost() {
-    this.http
-      .post('http://localhost:4000/api/posts', this.createPostForm.value)
-      .subscribe(
-        (data) => {
-          console.log(data);
-          this.goToDashboard();
-        },
-        (error) => console.log(error)
-      );
-    console.log('createPost: ', this.createPostForm.value);
+    this.createPostSubscription = this.apiService
+      .createPost(this.createPostForm.value)
+      .subscribe({
+        next: () => this.goToDashboard(),
+        error: (error) => console.log(error),
+      });
   }
 
   goToDashboard() {
