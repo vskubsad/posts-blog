@@ -31,6 +31,10 @@
       [isDisabled]="!createPostForm.valid"
     ></app-mat-button>
 
-    <app-mat-button [color]="'secondary'" [label]="'Cancel'"></app-mat-button>
+    <app-mat-button
+      [color]="'secondary'"
+      [label]="'Cancel'"
+      (click)="goToDashboard()"
+    ></app-mat-button>
   </div>
 </form>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoremIpsum } from 'lorem-ipsum';
 
 @Component({
@@ -22,7 +23,7 @@ export class CreatePostComponent {
     },
   });
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.createPostFormGroup();
   }
 
@@ -46,9 +47,14 @@ export class CreatePostComponent {
       .subscribe(
         (data) => {
           console.log(data);
+          this.goToDashboard();
         },
         (error) => console.log(error)
       );
     console.log('createPost: ', this.createPostForm.value);
+  }
+
+  goToDashboard() {
+    this.router.navigate(['/dashboard']);
   }
 }

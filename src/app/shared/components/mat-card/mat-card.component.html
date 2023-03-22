@@ -8,7 +8,10 @@
     <mat-divider></mat-divider>
     <br />
     <mat-card-content class="card-content">
-      <p>{{ post.description }}</p>
+      <p>
+        {{ post.description.slice(0, 200) }}
+        <mat-icon class="icon">more_horiz</mat-icon>
+      </p>
     </mat-card-content>
     <mat-divider></mat-divider>
     <mat-card-actions>
