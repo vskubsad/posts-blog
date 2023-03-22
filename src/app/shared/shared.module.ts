@@ -9,8 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTextareaComponent } from './components/mat-textarea/mat-textarea.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatGridListModule} from '@angular/material/grid-list';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [MatInputComponent, MatCardComponent, MatTextareaComponent],
@@ -22,7 +22,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatButtonModule,
     MatChipsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDividerModule,
   ],
   exports: [MatInputComponent, MatCardComponent, MatTextareaComponent],
 })

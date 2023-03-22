@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -6,28 +7,30 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
 })
-export class PostsComponent {
-  
-  constructor(private router: Router,
-    private route: ActivatedRoute){}
+export class PostsComponent implements OnInit {
+  posts: any;
 
-  posts: any = [
-    {
-      id: '1',
-      title: 'test-1',
-      subTitle: 'test sub title',
-      description: ' post-1 description sample',
-    },
-    {
-      id: '2',
-      title: 'test-2',
-      subTitle: 'test sub title',
-      description: ' post-2 description sample',
-    },
-  ];
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private http: HttpClient
+  ) {}
 
-  showPostDetails(post: any){
-    console.log('post: ', post)
-    this.router.navigate(['post-details'], { relativeTo: this.route, state: {post}})
+  ngOnInit(): void {
+    this.http.get('http://localhost:4000/api/posts').subscribe(
+      (data: any) => {
+        console.log(data);
+        this.posts = data?.posts;
+      },
+      (error) => console.log('Error: ', error)
+    );
+  }
+
+  showPostDetails(post: any) {
+    console.log('post: ', post);
+    this.router.navigate(['post-details'], {
+      relativeTo: this.route,
+      state: { post },
+    });
   }
 }

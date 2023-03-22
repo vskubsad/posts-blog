@@ -1,29 +1,18 @@
 <div class="card">
   <mat-card class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{ post.title }}</mat-card-title>
       <mat-card-subtitle>{{ post.subTitle }}</mat-card-subtitle>
     </mat-card-header>
-    <img
-      mat-card-image
-      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-      alt="Photo of a Shiba Inu"
-    />
+    <br />
+    <mat-divider></mat-divider>
+    <br />
     <mat-card-content>
-      <p>
-        {{ post.description }}
-      </p>
+      <p>{{ post.description }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
-  <!-- <mat-chip-listbox aria-label="Fish selection">
-    <mat-chip-option>One fish</mat-chip-option>
-    <mat-chip-option>Two fish</mat-chip-option>
-    <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
-    <mat-chip-option color="warn">Warn fish</mat-chip-option>
-  </mat-chip-listbox> -->
 </div>
