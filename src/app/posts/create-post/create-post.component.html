@@ -25,13 +25,12 @@
     ></app-mat-textarea>
   </div>
   <div>
-    <button
-      type="submit"
-      mat-button
-      color="primary"
-      [disabled]="!createPostForm.valid"
-    >
-      Create
-    </button>
+    <app-mat-button
+      [color]="'primary'"
+      [label]="'Create'"
+      [isDisabled]="!createPostForm.valid"
+    ></app-mat-button>
+
+    <app-mat-button [color]="'secondary'" [label]="'Cancel'"></app-mat-button>
   </div>
 </form>

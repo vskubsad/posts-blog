@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    CreatePostComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    SharedModule,
+    SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
