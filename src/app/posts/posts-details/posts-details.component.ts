@@ -16,4 +16,7 @@ export class PostsDetailsComponent {
       this.post = state.post
   }
 
+  goToDashboard() {
+    this.location.back()
+  }
 }

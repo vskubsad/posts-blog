@@ -11,6 +11,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { MatInputComponent } from './components/mat-input/mat-input.component';
 import { MatTextareaComponent } from './components/mat-textarea/mat-textarea.component';
@@ -38,6 +39,7 @@ import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.compon
     MatDividerModule,
     MatIconModule,
     MatToolbarModule,
+    MatProgressBarModule
   ],
   exports: [
     MatInputComponent,
