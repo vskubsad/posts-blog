@@ -1,40 +1,43 @@
-<h1>Create New Post</h1>
-<form [formGroup]="createPostForm" (ngSubmit)="createPost()">
-  <div class="element-width">
-    <app-mat-input
-      label="Title"
-      placeholder="Please enter the post title"
-      [fieldCtrl]="createPostForm.controls.title"
-    >
-    </app-mat-input>
-  </div>
-  <div class="element-width">
-    <app-mat-input
-      label="Sub Title"
-      placeholder="Please enter the post sub-title"
-      [fieldCtrl]="createPostForm.controls.subTitle"
-    >
-    </app-mat-input>
-  </div>
+<div class="new-post">
+  <h1>Create New Post</h1>
+  <hr />
+  <form [formGroup]="createPostForm" (ngSubmit)="createPost()">
+    <div class="element-width">
+      <app-mat-input
+        label="Title"
+        placeholder="Please enter the post title"
+        [fieldCtrl]="createPostForm.controls.title"
+      >
+      </app-mat-input>
+    </div>
+    <div class="element-width">
+      <app-mat-input
+        label="Sub Title"
+        placeholder="Please enter the post sub-title"
+        [fieldCtrl]="createPostForm.controls.subTitle"
+      >
+      </app-mat-input>
+    </div>
 
-  <div class="element-width">
-    <app-mat-textarea
-      label="Description"
-      placeholder="Please enter the post description"
-      [fieldCtrl]="createPostForm.controls.description"
-    ></app-mat-textarea>
-  </div>
-  <div>
-    <app-mat-button
-      [color]="'primary'"
-      [label]="'Create'"
-      [isDisabled]="!createPostForm.valid"
-    ></app-mat-button>
+    <div class="element-width">
+      <app-mat-textarea
+        label="Description"
+        placeholder="Please enter the post description"
+        [fieldCtrl]="createPostForm.controls.description"
+      ></app-mat-textarea>
+    </div>
+    <div>
+      <app-mat-button
+        [color]="'primary'"
+        [label]="'Create'"
+        [isDisabled]="!createPostForm.valid"
+      ></app-mat-button>
 
-    <app-mat-button
-      [color]="'secondary'"
-      [label]="'Cancel'"
-      (click)="goToDashboard()"
-    ></app-mat-button>
-  </div>
-</form>
+      <app-mat-button
+        [color]="'secondary'"
+        [label]="'Cancel'"
+        (click)="goToDashboard()"
+      ></app-mat-button>
+    </div>
+  </form>
+</div>
