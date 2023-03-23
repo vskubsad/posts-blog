@@ -1,4 +1,3 @@
 <div *ngFor="let post of posts" (click)="showPostDetails(post)">
-  <h3>{{ post.name }}</h3>
-  <p>{{ post.description }}</p>
+  <app-mat-card [post]="post"></app-mat-card>
 </div>

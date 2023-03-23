@@ -1,0 +1,44 @@
+<div class="card">
+  <mat-card class="card-block">
+    <mat-card-header>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+      <mat-card-subtitle>{{ post.subTitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+    <mat-card-content class="card-content">
+      <p>
+        {{ post.description.slice(0, 200) }}
+        <mat-icon class="icon">more_horiz</mat-icon>
+      </p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="warn"
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</div>

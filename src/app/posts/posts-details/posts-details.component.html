@@ -1,6 +1,7 @@
-<p>posts-details works!</p>
-
 <div>
-    <h3>{{post.name}}</h3>
-    <p>{{post.description}}</p>
+  <h1>{{ post.title }}</h1>
+  <h2>{{ post.subTitle }}</h2>
+  <hr />
+  <p>{{ post.description }}</p>
+  <app-mat-button [color]="'primary'" [label]="'Back'" (click)="goToDashboard()" class="float-right"></app-mat-button>
 </div>
