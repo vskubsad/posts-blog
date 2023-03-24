@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-mat-toolbar',
@@ -9,10 +10,8 @@ import { Router } from '@angular/router';
 export class MatToolbarComponent {
   isLoggedIn: boolean = false;
 
-  constructor(private router: Router) {
-    const token = sessionStorage.getItem('access_token') || '';
-    this.isLoggedIn = token?.length > 0 ? true : false;
-    // console.log('isLoggedIn', this.isLoggedIn);
+  constructor(private router: Router, private loginService: LoginService) {
+    this.isUserLoggedIn();
   }
 
   goToDashboard = () => {
@@ -21,6 +20,17 @@ export class MatToolbarComponent {
 
   logout = () => {
     sessionStorage.clear();
+    this.loginService.changeLoginStatus(false)
     this.router.navigate(['/login']);
   };
+
+  isUserLoggedIn = () => {
+    this.loginService.loginStatus.subscribe({
+      next: response => {
+        // console.log('login: ', response);
+        this.isLoggedIn = response
+      },
+      error: error => console.error(error)
+    })
+  }
 }
