@@ -9,5 +9,6 @@ export const postsUrl = {
 };
 
 export const loginUrl = {
-  googleLogin: environment.backendApiUrl + '/auth/google'
+  googleLogin: environment.backendApiUrl + '/auth/google',
+  facebookLogin: environment.backendApiUrl + '/auth/facebook',
 }

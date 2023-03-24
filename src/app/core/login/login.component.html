@@ -1,5 +1,11 @@
 <app-mat-button
 [color]="'primary'"
 [label]="'Google Login'"
-(click)="googleLogin()"
+(click)="socialLogin('google')"
+></app-mat-button>
+
+<app-mat-button
+[color]="'primary'"
+[label]="'Facebook Login'"
+(click)="socialLogin('facebook')"
 ></app-mat-button>

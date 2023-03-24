@@ -16,39 +16,25 @@ export class LoginComponent {
   ) {
     const token = this.route.snapshot.queryParams['jwt_token'];
     // console.log('token', token);
-    sessionStorage.setItem(
-      'access_token',
-      token
-    );
-    if(token){
+    sessionStorage.setItem('access_token', token);
+    if (token) {
       this.router.navigate(['dashboard']);
     }
   }
 
-  googleLogin() {
-    this.http
-      .get(loginUrl.googleLogin, 
-      //   {
-      //   headers: {
-      //     'Access-Control-Allow-Origin': '*',
-      //     'Access-Control-Allow-Credentials': 'true',
-      //     'Access-Control-Max-Age': '1800',
-      //     'Access-Control-Allow-Headers': 'content-type',
-      //     'Access-Control-Allow-Methods':
-      //       'PUT, POST, GET, DELETE, PATCH, OPTIONS',
-      //   },
-      // }
-      )
-      .subscribe(
-        (response) => {
-          console.log(response);
-          sessionStorage.setItem(
-            'access_token',
-            this.route.snapshot.queryParams['jwt_token']
-          );
-          this.router.navigate(['dashboard']);
-        },
-        (error) => console.log(error)
-      );
+  socialLogin(loginType: string) {
+    const url =
+      loginType === 'google' ? loginUrl.googleLogin : loginUrl.facebookLogin;
+    this.http.get(url).subscribe(
+      (response) => {
+        // console.log(response);
+        sessionStorage.setItem(
+          'access_token',
+          this.route.snapshot.queryParams['jwt_token']
+        );
+        this.router.navigate(['dashboard']);
+      },
+      (error) => console.log(error)
+    );
   }
 }
