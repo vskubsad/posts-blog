@@ -1,11 +1,13 @@
-<app-mat-button
-[color]="'primary'"
-[label]="'Google Login'"
-(click)="socialLogin('google')"
-></app-mat-button>
+<h1 class="header" style="text-align: center">Posts Login Appilication</h1>
+<hr />
+<div class="btn">
+  <cool-google-button color="dark" (click)="socialLogin('google')">
+    Login with Google
+  </cool-google-button>
+</div>
 
-<app-mat-button
-[color]="'primary'"
-[label]="'Facebook Login'"
-(click)="socialLogin('facebook')"
-></app-mat-button>
+<div class="btn">
+  <cool-facebook-button color="dark" (click)="socialLogin('facebook')">
+    Login with Facebook
+  </cool-facebook-button>
+</div>
