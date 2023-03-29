@@ -39,14 +39,14 @@ import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.compon
     MatDividerModule,
     MatIconModule,
     MatToolbarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
   ],
   exports: [
     MatInputComponent,
     MatCardComponent,
     MatTextareaComponent,
     MatButtonComponent,
-    MatToolbarComponent
+    MatToolbarComponent,
   ],
 })
 export class SharedModule {}
